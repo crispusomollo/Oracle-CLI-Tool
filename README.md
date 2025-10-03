@@ -51,7 +51,9 @@ DB_CONFIG = {
 ```
 
 
+
 🖥️ Usage
+
 ▶️ Run a saved SQL file
 ```bash
 python main.py --query sample_query
@@ -95,6 +97,7 @@ oracle-cli-tool/
 - All CSVs are exported to the output/ folder.
 
 
+
 📦 Install Notes
 
 Install dependencies manually if needed:
@@ -102,6 +105,7 @@ Install dependencies manually if needed:
 ```bash 
 pip install oracledb
 ```
+
 
 🤝 License
 
