@@ -56,10 +56,9 @@ DB_CONFIG = {
 ```bash
 python main.py --query sample_query
 ```
+ 
+(Reads sql/sample query.sql)
 
-```bash 
-(Reads sql/sample_query.sql)
-```
 
 
 ▶️ Run an inline SQL query
