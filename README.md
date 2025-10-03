@@ -52,7 +52,7 @@ DB_CONFIG = {
 
 
 
-🖥️ Usage
+## 🖥️ Usage
 
 ▶️ Run a saved SQL file
 ```bash
@@ -76,7 +76,7 @@ python main.py --query sample_query --out result.csv
 CSV is saved to output/result.csv
 
 
-📁 File Structure
+## 📁 File Structure
 
 ```bash
 oracle-cli-tool/
@@ -90,7 +90,7 @@ oracle-cli-tool/
 └── README.md
 ```
 
-🧠 Tips
+## 🧠 Tips
 
 - Place your queries inside sql/ as .sql files.
 - Refer to them by name (without .sql) using --query.
@@ -98,7 +98,7 @@ oracle-cli-tool/
 
 
 
-📦 Install Notes
+## 📦 Install Notes
 
 Install dependencies manually if needed:
 
@@ -107,7 +107,7 @@ pip install oracledb
 ```
 
 
-🤝 License
+## 🤝 License
 
 MIT — free to use and modify.
 
