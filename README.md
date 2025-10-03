@@ -71,8 +71,8 @@ python main.py --sql "SELECT * FROM employees"
 python main.py --query sample_query --out result.csv
 ```
 
-```CSV is saved to output/result.csv
-```
+CSV is saved to output/result.csv
+
 
 📁 File Structure
 
