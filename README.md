@@ -57,8 +57,8 @@ DB_CONFIG = {
 python main.py --query sample_query
 ```
 
-```
-bash (Reads sql/sample_query.sql)
+```bash 
+(Reads sql/sample_query.sql)
 ```
 
 
