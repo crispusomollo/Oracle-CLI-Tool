@@ -2,6 +2,11 @@
 
 A lightweight command-line tool to connect to an Oracle database, run SQL queries (inline or from file), and export results to CSV — using Python and the `oracledb` driver.
 
+![Python](https://img.shields.io/badge/Python-3.12+-blue)
+![Oracle DB](https://img.shields.io/badge/Oracle%20DB-Supported-orange)
+![License: MIT](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+
 ---
 
 ## ✅ Features
@@ -9,7 +14,8 @@ A lightweight command-line tool to connect to an Oracle database, run SQL querie
 - Connects to Oracle DB (thin mode, no Instant Client required)
 - Run SQL from `.sql` files or inline strings
 - Export query results to CSV
-- Safe, clean, and easy to extend
+- Safe, clean, and easy to extend or integrate into scripts and pipelines
+- Test-covered and modular
 
 ---
 
@@ -32,8 +38,8 @@ cd oracle-cli-tool
 
 2. **Create virtual environment**
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv oracledb-env
+source oracledb-env/bin/activate
 ```
 
 3. **Install dependencies**
@@ -76,6 +82,10 @@ python main.py --query sample_query --out result.csv
 CSV is saved to output/result.csv
 
 
+🧪 Run Tests
+python3 -m unittest discover tests
+
+
 ## 📁 File Structure
 
 ```bash
@@ -111,4 +121,14 @@ pip install oracledb
 
 MIT — free to use and modify.
 
+
+📦 Coming Soon
+
+ Docker support
+
+ Insert from CSV
+
+ JSON output
+
+ GitHub Actions CI
 
