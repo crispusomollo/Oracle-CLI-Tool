@@ -1,5 +1,7 @@
 # tests/test_main.py
 
+from main import load_sql_file
+
 import unittest
 import os
 from main import save_to_csv
@@ -30,6 +32,25 @@ class TestMain(unittest.TestCase):
 
         # Cleanup
         os.remove(path)
+
+    def test_load_sql_file_success(self):
+        test_sql_name = "test_query"
+        test_sql_path = f"sql/{test_sql_name}.sql"
+
+        os.makedirs("sql", exist_ok=True)
+        with open(test_sql_path, "w") as f:
+            f.write("SELECT * FROM users")
+
+        sql_content = load_sql_file(test_sql_name)
+        self.assertIn("SELECT * FROM users", sql_content)
+
+        # Cleanup
+        os.remove(test_sql_path)
+
+    def test_load_sql_file_missing(self):
+        with self.assertRaises(FileNotFoundError):
+            load_sql_file("non_existent_query")
+
 
 if __name__ == '__main__':
     unittest.main()
