@@ -86,6 +86,17 @@ CSV is saved to output/result.csv
 python3 -m unittest discover tests
 
 
+## 🐳 Run with Docker
+
+```bash
+docker pull crispusmomollo/oracle-cli
+
+docker run --rm \
+  -v $(pwd)/sql:/app/sql \
+  -v $(pwd)/output:/app/output \
+  crispusmomollo/oracle-cli --query sample_query
+
+
 ## 📁 File Structure
 
 ```bash
