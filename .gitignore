@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtualenv
+venv/
+oracledb-env/
+
+# Output files
+output/*.csv
+
+# Editor / OS files
+.DS_Store
+*.swp
