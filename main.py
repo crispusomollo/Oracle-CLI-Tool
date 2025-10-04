@@ -26,6 +26,9 @@ def main():
     parser.add_argument("--query", help="Run a saved SQL file from sql/*.sql")
     parser.add_argument("--sql", help="Run an inline SQL string")
     parser.add_argument("--out", help="Export results to CSV (filename)")
+    parser.add_argument("--insert-csv", help="Path to CSV file to insert into DB")
+    parser.add_argument("--table", help="Table to insert CSV rows into")
+
 
     args = parser.parse_args()
 
