@@ -83,8 +83,9 @@ CSV is saved to output/result.csv
 
 
 🧪 Run Tests
+```bash
 python3 -m unittest discover tests
-
+```
 
 ## 🐳 Run with Docker
 
