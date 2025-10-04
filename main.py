@@ -49,5 +49,26 @@ def main():
     if args.out:
         save_to_csv(rows, headers, args.out)
 
+
+    if args.insert_csv and args.table:
+        import csv
+
+        with open(args.insert_csv, newline='') as csvfile:
+            reader = csv.reader(csvfile)
+            headers = next(reader)  # Assumes header row exists
+
+            placeholders = ','.join([f":{i+1}" for i in range(len(headers))])
+            sql = f"INSERT INTO {args.table} ({', '.join(headers)}) VALUES ({placeholders})"
+
+            rows = list(reader)
+
+        conn = get_connection()
+        with conn.cursor() as cursor:
+            cursor.executemany(sql, rows)
+            conn.commit()
+        print(f"✅ Inserted {len(rows)} rows into {args.table}")
+        return
+
+
 if __name__ == "__main__":
     main()
