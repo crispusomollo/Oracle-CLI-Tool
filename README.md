@@ -122,13 +122,13 @@ pip install oracledb
 MIT — free to use and modify.
 
 
-📦 Coming Soon
+## 📦 Coming Soon
 
- Docker support
+- Docker support
 
- Insert from CSV
+- Insert from CSV
 
- JSON output
+- JSON output
 
- GitHub Actions CI
+- GitHub Actions CI
 
