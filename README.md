@@ -132,3 +132,6 @@ MIT — free to use and modify.
 
 - GitHub Actions CI
 
+## 🙌 Contributing
+
+Pull requests and issues welcome! Feel free to fork and enhance.
