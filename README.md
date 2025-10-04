@@ -2,6 +2,8 @@
 
 A lightweight command-line tool to connect to an Oracle database, run SQL queries (inline or from file), and export results to CSV — using Python and the `oracledb` driver.
 
+![CI](https://github.com/crispusomollo/oracle-cli-tool/actions/workflows/ci.yml/badge.svg)
+
 ![Python](https://img.shields.io/badge/Python-3.12+-blue)
 ![Oracle DB](https://img.shields.io/badge/Oracle%20DB-Supported-orange)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
