@@ -95,7 +95,7 @@ docker run --rm \
   -v $(pwd)/sql:/app/sql \
   -v $(pwd)/output:/app/output \
   crispusmomollo/oracle-cli --query sample_query
-
+```
 
 ## 📁 File Structure
 
