@@ -22,12 +22,22 @@ def save_to_csv(rows, headers, filename):
     print(f"✅ CSV exported to {path}")
 
 def main():
-    parser = argparse.ArgumentParser(description="🔧 Oracle CLI Tool")
-    parser.add_argument("--query", help="Run a saved SQL file from sql/*.sql")
-    parser.add_argument("--sql", help="Run an inline SQL string")
-    parser.add_argument("--out", help="Export results to CSV (filename)")
+    parser = argparse.ArgumentParser(description="Oracle DB CLI Tool")
+    parser.add_argument("--sql", help="Run raw SQL string")
+    parser.add_argument("--query", help="Run SQL from file in sql/")
+    parser.add_argument("--out", help="Output CSV filename")
+    parser.add_argument("--params", nargs='*', help="Parameters for SQL in key=value format")
+
+    # ✅ These two must be added:
     parser.add_argument("--insert-csv", help="Path to CSV file to insert into DB")
     parser.add_argument("--table", help="Table to insert CSV rows into")
+
+    #parser = argparse.ArgumentParser(description="🔧 Oracle CLI Tool")
+    #parser.add_argument("--query", help="Run a saved SQL file from sql/*.sql")
+    #parser.add_argument("--sql", help="Run an inline SQL string")
+    #parser.add_argument("--out", help="Export results to CSV (filename)")
+    #parser.add_argument("--insert-csv", help="Path to CSV file to insert into DB")
+    #parser.add_argument("--table", help="Table to insert CSV rows into")
 
 
     args = parser.parse_args()
