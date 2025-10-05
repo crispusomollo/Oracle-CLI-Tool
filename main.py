@@ -22,23 +22,10 @@ def save_to_csv(rows, headers, filename):
     print(f"✅ CSV exported to {path}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Oracle DB CLI Tool")
-    parser.add_argument("--sql", help="Run raw SQL string")
-    parser.add_argument("--query", help="Run SQL from file in sql/")
-    parser.add_argument("--out", help="Output CSV filename")
-    parser.add_argument("--params", nargs='*', help="Parameters for SQL in key=value format")
-
-    # ✅ These two must be added:
-    parser.add_argument("--insert-csv", help="Path to CSV file to insert into DB")
-    parser.add_argument("--table", help="Table to insert CSV rows into")
-
-    #parser = argparse.ArgumentParser(description="🔧 Oracle CLI Tool")
-    #parser.add_argument("--query", help="Run a saved SQL file from sql/*.sql")
-    #parser.add_argument("--sql", help="Run an inline SQL string")
-    #parser.add_argument("--out", help="Export results to CSV (filename)")
-    #parser.add_argument("--insert-csv", help="Path to CSV file to insert into DB")
-    #parser.add_argument("--table", help="Table to insert CSV rows into")
-
+    parser = argparse.ArgumentParser(description="🔧 Oracle CLI Tool")
+    parser.add_argument("--query", help="Run a saved SQL file from sql/*.sql")
+    parser.add_argument("--sql", help="Run an inline SQL string")
+    parser.add_argument("--out", help="Export results to CSV (filename)")
 
     args = parser.parse_args()
 
@@ -58,27 +45,6 @@ def main():
 
     if args.out:
         save_to_csv(rows, headers, args.out)
-
-
-    if args.insert_csv and args.table:
-        import csv
-
-        with open(args.insert_csv, newline='') as csvfile:
-            reader = csv.reader(csvfile)
-            headers = next(reader)  # Assumes header row exists
-
-            placeholders = ','.join([f":{i+1}" for i in range(len(headers))])
-            sql = f"INSERT INTO {args.table} ({', '.join(headers)}) VALUES ({placeholders})"
-
-            rows = list(reader)
-
-        conn = get_connection()
-        with conn.cursor() as cursor:
-            cursor.executemany(sql, rows)
-            conn.commit()
-        print(f"✅ Inserted {len(rows)} rows into {args.table}")
-        return
-
 
 if __name__ == "__main__":
     main()
